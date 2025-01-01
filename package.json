@@ -1,0 +1,24 @@
+{
+  "name": "db-sync",
+  "version": "1.0.0",
+  "description": "sync media data to juicebar database",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.3",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,38 @@
+name: Auto Sync API to Database
+
+on:
+  schedule:
+    # Run every day
+    - cron: "0 0 * * *"
+
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  sync-api-to-db:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Use the appropriate Node.js version
+          cache: npm
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run the sync script
+      - name: Run sync script
+        run: node db.js
+        env:
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+          API_URL_WL: ${{ secrets.API_URL_WL }}
+          API_URL_PG: ${{ secrets.API_URL_PG }}
+          API_URL_COM: ${{ secrets.API_URL_COM }}
+          NEODB_TOKEN: ${{ secrets.NEODB_TOKEN }}

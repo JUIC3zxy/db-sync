@@ -87,6 +87,8 @@ async function updateStoreItem() {
   let wishlist_data = await getData(wishlist_api, token);
   let progress_data = await getData(progress_api, token);
   let complete_data = await getData(complete_api, token);
+
+
   function filterDate(data) {
     return data.filter((item) => new Date(item.created_time) > lastUpdateTime);
   }

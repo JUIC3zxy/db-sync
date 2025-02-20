@@ -36,3 +36,4 @@ jobs:
           API_URL_PG: ${{ secrets.API_URL_PG }}
           API_URL_COM: ${{ secrets.API_URL_COM }}
           NEODB_TOKEN: ${{ secrets.NEODB_TOKEN }}
+          EGGPLANT_TOKEN: ${{ secrets.EGGPLANT_TOKEN}}

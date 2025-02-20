@@ -7,7 +7,7 @@ const wishlist_api = process.env.API_URL_WL;
 const progress_api = process.env.API_URL_PG;
 const complete_api = process.env.API_URL_COM;
 
-const token = process.env.NEODB_TOKEN;
+const token = process.env.EGGPLANT_TOKEN;
 
 const sql = neon(db); //--connect to database
 
